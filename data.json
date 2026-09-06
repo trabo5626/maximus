@@ -1,0 +1,50 @@
+[
+  {
+    "": "",
+    "VNINDEX": 25.36,
+    "HNX": 0.29,
+    "UPCOM": 0.16
+  },
+  {
+    "": "",
+    "VNINDEX": 1.39,
+    "HNX": 0.1,
+    "UPCOM": 0.13
+  },
+  {
+    "": "",
+    "VNINDEX": 1853.08,
+    "HNX": 282.53,
+    "UPCOM": 127.94
+  },
+  {
+    "": "",
+    "VNINDEX": 16700,
+    "HNX": 642,
+    "UPCOM": 477
+  },
+  {
+    "": "",
+    "VNINDEX": "VNINDEX",
+    "HNX": "HNX",
+    "UPCOM": "UPCOM"
+  },
+  {
+    "": "TĂNG",
+    "VNINDEX": 128,
+    "HNX": 66,
+    "UPCOM": 127
+  },
+  {
+    "": "GIẢM",
+    "VNINDEX": 176,
+    "HNX": 76,
+    "UPCOM": 127
+  },
+  {
+    "": "ĐỨNG GIÁ",
+    "VNINDEX": 74,
+    "HNX": 61,
+    "UPCOM": 105
+  }
+]
