@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 24px;
+    color: #1a1a1a;
+  }
+  h1 {
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+  #updated {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  #container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    overflow-x: auto;
+    padding: 8px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+  }
+  th, td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    white-space: nowrap;
+  }
+  th {
+    background: #fafafa;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+  }
+  tr:hover td {
+    background: #f9f9f9;
+  }
+  #status {
+    padding: 40px;
+    text-align: center;
+    color: #888;
+  }
+</style>
+</head>
+<body>
+
+<h1>Dashboard</h1>
+<div id="updated">Đang tải...</div>
+<div id="container">
+  <div id="status">Đang lấy dữ liệu...</div>
+</div>
+
+<script>
+  // ĐỔI đường dẫn dưới đây nếu tên user/repo GitHub của bạn khác
+  const JSON_URL = "data.json";
+
+  function loadData() {
+    fetch(JSON_URL + "?t=" + Date.now())
+      .then(function (res) {
+        if (!res.ok) throw new Error("Không tải được dữ liệu");
+        return res.json();
+      })
+      .then(renderTable)
+      .catch(function (err) {
+        document.getElementById("status").textContent = "Lỗi: " + err.message;
+      });
+  }
+
+  function renderTable(rows) {
+    const container = document.getElementById("container");
+    document.getElementById("updated").textContent =
+      "Cập nhật lúc: " + new Date().toLocaleString("vi-VN");
+
+    if (!rows || rows.length === 0) {
+      container.innerHTML = '<div id="status">Chưa có dữ liệu</div>';
+      return;
+    }
+
+    const headers = Object.keys(rows[0]);
+    let html = "<table><thead><tr>";
+    headers.forEach(function (h) {
+      html += "<th>" + h + "</th>";
+    });
+    html += "</tr></thead><tbody>";
+
+    rows.forEach(function (row) {
+      html += "<tr>";
+      headers.forEach(function (h) {
+        html += "<td>" + (row[h] !== undefined ? row[h] : "") + "</td>";
+      });
+      html += "</tr>";
+    });
+    html += "</tbody></table>";
+    container.innerHTML = html;
+  }
+
+  loadData();
+  // Tự động làm mới mỗi 60 giây để lấy dữ liệu mới nhất
+  setInterval(loadData, 60000);
+</script>
+
+</body>
+</html>
