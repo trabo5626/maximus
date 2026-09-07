@@ -1,27 +1,27 @@
 [
   {
     "": "",
-    "VNINDEX": 25.36,
-    "HNX": 0.29,
-    "UPCOM": 0.16
+    "VNINDEX": 7.76,
+    "HNX": -0.49,
+    "UPCOM": 0.41
   },
   {
     "": "",
-    "VNINDEX": 1.39,
-    "HNX": 0.1,
-    "UPCOM": 0.13
+    "VNINDEX": 0.42,
+    "HNX": -0.17,
+    "UPCOM": 0.32
   },
   {
     "": "",
-    "VNINDEX": 1853.08,
-    "HNX": 282.53,
-    "UPCOM": 127.94
+    "VNINDEX": 1860.84,
+    "HNX": 282.04,
+    "UPCOM": 128.35
   },
   {
     "": "",
-    "VNINDEX": 16700,
-    "HNX": 642,
-    "UPCOM": 477
+    "VNINDEX": 2971,
+    "HNX": 134,
+    "UPCOM": 82
   },
   {
     "": "",
@@ -31,20 +31,20 @@
   },
   {
     "": "TĂNG",
-    "VNINDEX": 128,
-    "HNX": 66,
-    "UPCOM": 127
+    "VNINDEX": 103,
+    "HNX": 33,
+    "UPCOM": 64
   },
   {
     "": "GIẢM",
-    "VNINDEX": 176,
-    "HNX": 76,
-    "UPCOM": 127
+    "VNINDEX": 150,
+    "HNX": 47,
+    "UPCOM": 46
   },
   {
     "": "ĐỨNG GIÁ",
-    "VNINDEX": 74,
-    "HNX": 61,
-    "UPCOM": 105
+    "VNINDEX": 69,
+    "HNX": 51,
+    "UPCOM": 63
   }
 ]
